@@ -24,5 +24,13 @@ namespace Client.Route
         {
             InitializeComponent();
         }
+
+        private void button15_Copy5_Click(object sender, RoutedEventArgs e)
+        {
+            Button now = sender as Button;
+            Ticket.To = (string)now.Content;
+            Pay pay = new Pay();
+            pay.Show();
+        }
     }
 }

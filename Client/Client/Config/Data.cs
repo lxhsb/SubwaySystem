@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Client.Route;
 namespace Client.Config
 {
     class Data
@@ -17,6 +17,7 @@ namespace Client.Config
         public static void InitData(string _DefaultStation)
         {
             DefaultStation = _DefaultStation;
+            Ticket.From = DefaultStation;
             RouteList[1] = new string[] { "西流湖", "西三环", "秦岭路", "桐柏路", "碧沙岗", "绿城广场", "医学院", "郑州火车站", "二七广场", "人民路", "紫荆山", "燕庄", "民航路", "会展中心", "黄河南路", "农业南路", "东风南路", "郑州东站", "博学路", "市体育中心" };
             RouteList[2] = new string[] { "刘庄", "柳林", "沙门", "北三环", "东风路", "关虎屯", "黄河路", "紫荆山", "东大街", "陇海东路", "二里岗", "南五里堡", "花寨", "南三环", "战马屯", "南四环" };
             StationCount = 1;
@@ -65,7 +66,7 @@ namespace Client.Config
                 {
                     for(int i=1;i<StationCount;i++)
                     {
-                        if(Distance[i][j]<Distance[i][k]+Distance[k][j])
+                        if(Distance[i][j]>Distance[i][k]+Distance[k][j])
                         {
                             Distance[i][j] = Distance[i][k] + Distance[k][j];
                         }
@@ -84,6 +85,7 @@ namespace Client.Config
         public static void ResetDefaultStation(string _DefaultStation)
         {
             DefaultStation = _DefaultStation;
+            Ticket.From = DefaultStation;
         }
         public static string[][] getAllStation()
         {

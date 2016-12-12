@@ -140,6 +140,8 @@ namespace Client
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string now = (string)comboBox.SelectedItem;
+            Data.ResetDefaultStation(now);
         }
 
         private void radioButton_Copy7_Checked(object sender, RoutedEventArgs e)

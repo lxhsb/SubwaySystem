@@ -9,22 +9,22 @@
       Title="_2号线">
 
     <Grid Height="477"  Width="779">
-        <Button x:Name="button5" Content="紫荆山" HorizontalAlignment="Left" Margin="417,214,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15" Content="黄河路" HorizontalAlignment="Left" Margin="541,209,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy" Content="关虎屯" HorizontalAlignment="Left" Margin="652,172,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy1" Content="东风路" HorizontalAlignment="Left" Margin="541,134,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy2" Content="北三环" HorizontalAlignment="Left" Margin="400,118,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy3" Content="沙门" HorizontalAlignment="Left" Margin="276,113,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy4" Content="柳林" HorizontalAlignment="Left" Margin="160,108,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy5" Content="刘庄" HorizontalAlignment="Left" Margin="36,103,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy7" Content="南三环" HorizontalAlignment="Left" Margin="427,355,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy8" Content="花寨" HorizontalAlignment="Left" Margin="325,336,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy9" Content="南五里堡" HorizontalAlignment="Left" Margin="218,331,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy10" Content="二里岗" HorizontalAlignment="Left" Margin="61,321,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy11" Content="陇海东路" HorizontalAlignment="Left" Margin="108,238,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy12" Content="东大街" HorizontalAlignment="Left" Margin="251,233,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy13" Content="战马屯" HorizontalAlignment="Left" Margin="525,373,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button15_Copy14" Content="南四环" HorizontalAlignment="Left" Margin="638,391,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button5" Content="紫荆山" HorizontalAlignment="Left" Margin="417,214,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15" Content="黄河路" HorizontalAlignment="Left" Margin="541,209,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy" Content="关虎屯" HorizontalAlignment="Left" Margin="652,172,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy1" Content="东风路" HorizontalAlignment="Left" Margin="541,134,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy2" Content="北三环" HorizontalAlignment="Left" Margin="400,118,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy3" Content="沙门" HorizontalAlignment="Left" Margin="276,113,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy4" Content="柳林" HorizontalAlignment="Left" Margin="160,108,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy5" Content="刘庄" HorizontalAlignment="Left" Margin="36,103,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy7" Content="南三环" HorizontalAlignment="Left" Margin="427,355,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy8" Content="花寨" HorizontalAlignment="Left" Margin="325,336,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy9" Content="南五里堡" HorizontalAlignment="Left" Margin="218,331,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy10" Content="二里岗" HorizontalAlignment="Left" Margin="61,321,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy11" Content="陇海东路" HorizontalAlignment="Left" Margin="108,238,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy12" Content="东大街" HorizontalAlignment="Left" Margin="251,233,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy13" Content="战马屯" HorizontalAlignment="Left" Margin="525,373,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+        <Button x:Name="button15_Copy14" Content="南四环" HorizontalAlignment="Left" Margin="638,391,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
 
     </Grid>
 </Page>

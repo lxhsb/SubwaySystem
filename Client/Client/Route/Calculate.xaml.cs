@@ -26,6 +26,7 @@ namespace Client.Route
             label2.Content = Ticket.From;
             label3.Content = Ticket.To;
             int dis = Data.getDistance(Ticket.From, Ticket.To);
+          //  MessageBox.Show(dis.ToString());
             int onePrice = Data.getPrice(dis);
             label6.Content = onePrice.ToString();
             int allPrice = onePrice * Ticket.TicketNum;

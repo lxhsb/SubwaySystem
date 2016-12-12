@@ -39,6 +39,7 @@
         <Button x:Name="button5" Content="模拟进出站" HorizontalAlignment="Left" Margin="10,568,0,0" VerticalAlignment="Top" Width="75" Click="button5_Click"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="4,494,0,0" VerticalAlignment="Top" Width="75" SelectionChanged="comboBox_SelectionChanged"/>
         <Label x:Name="label1" Content="默认站点" HorizontalAlignment="Left" Height="26" Margin="2,463,0,0" VerticalAlignment="Top" Width="59" RenderTransformOrigin="0.439,0.423"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="24,532,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.275,0.16"/>
 
     </Grid>
 </Window>

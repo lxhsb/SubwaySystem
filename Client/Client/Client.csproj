@@ -64,6 +64,7 @@
       <DependentUpon>Reg.xaml</DependentUpon>
     </Compile>
     <Compile Include="Config\Data.cs" />
+    <Compile Include="Ipc\Client.cs" />
     <Compile Include="Route\Pay.xaml.cs">
       <DependentUpon>Pay.xaml</DependentUpon>
     </Compile>
@@ -169,9 +170,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ipc\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

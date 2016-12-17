@@ -16,6 +16,7 @@ using Client.Route;
 using Client.Admin;
 using Client.TestFunction;
 using Client.Config;
+using Client.Ipc;
 namespace Client
 {
     /// <summary>
@@ -37,8 +38,15 @@ namespace Client
             }
             comboBox.SelectedIndex = 10;
             Ticket.TicketNum = 1;
-
-
+            try
+            {
+                Ipc.Client.Connect();
+            }
+            catch
+            {
+                MessageBox.Show("连接失败");
+                System.Environment.Exit(0);
+            }
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {

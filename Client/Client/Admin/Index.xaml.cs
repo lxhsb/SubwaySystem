@@ -23,5 +23,12 @@ namespace Client.Admin
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            Reg reg = new Reg();
+            reg.Show();
+
+        }
     }
 }

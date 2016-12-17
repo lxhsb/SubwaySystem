@@ -23,5 +23,20 @@ namespace Client.Admin
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string peopleid = textBox1.Text;
+            if(peopleid.Length!=18)
+            {
+                MessageBox.Show("请合法输入");
+                return;
+            }
+            else
+            {
+                string res = Ipc.Client.Reg(peopleid);
+                MessageBox.Show(res);
+            }
+        }
     }
 }

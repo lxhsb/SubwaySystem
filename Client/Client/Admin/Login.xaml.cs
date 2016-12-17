@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Client.Ipc;
 namespace Client.Admin
 {
     /// <summary>
@@ -22,6 +22,29 @@ namespace Client.Admin
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string usr = textBox.Text;
+            string pass = textBox1.Text;
+            if(usr.Length<=0||usr.Length>=16||pass.Length<=0||pass.Length>=16)
+            {
+                MessageBox.Show("请合法输入");
+            }
+            else
+            {
+                if(Ipc.Client.Login(usr,pass)==true)
+                {
+                    Index i = new Index();
+                    i.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("登录失败");
+                }
+            }
         }
     }
 }

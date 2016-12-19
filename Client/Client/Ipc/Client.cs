@@ -44,7 +44,7 @@ namespace Client.Ipc
                 Body = _body;
             }
         };
-         public struct Account
+         public struct Account //这个是登陆用的
         {
            public  string user;
            public  string pass;
@@ -54,6 +54,7 @@ namespace Client.Ipc
                 pass = p;
             }
         }
+        
         private static Socket ClientSocket;
         private static string Ip = "127.0.0.1";//server ip 
         private static int Port = 1208;//server port 
@@ -125,5 +126,21 @@ namespace Client.Ipc
                 throw e;
             }
         }
+        public static string GetAllFrequentUserList()//返回一个json
+        {
+            Request req = new Request();
+            req.Method = "GETALLFREQUENTUSERLIST";
+            req.Params = "";
+            JavaScriptSerializer js = new JavaScriptSerializer();
+          
+            
+            Response re = Send(req);
+            return re.Body;
+            
+
+
+
+        }
     }
+
 }

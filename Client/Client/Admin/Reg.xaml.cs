@@ -36,7 +36,9 @@ namespace Client.Admin
             {
                 string res = Ipc.Client.Reg(peopleid);
                 MessageBox.Show(res);
+                this.Close();
             }
+
         }
     }
 }

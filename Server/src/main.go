@@ -8,6 +8,7 @@ import (
 	"DB"
 	"os"
 	//"time"
+	"sync"
 )
 
 
@@ -18,14 +19,16 @@ var ip string = "127.0.0.1"
 func main(){
 
 	dbtool ,err := DB.NewDBTool("root","root","127.0.0.1","3306","subwaysys")
-	defer dbtool.Db.Close()//本来不行把这个给开放的 但是如果不开放的话 根本没法关闭数据库连接
+	defer dbtool.Close()
 	//***要多学习设计模式***
 	if err!=nil{
 		log.Println(err)
 		os.Exit(1)
 	}
-	server := ipc.NewIpcServer("fuck",dbtool)
-	netListener ,err := net.Listen("tcp",ip+":"+strconv.Itoa(port))
+
+	lock := &sync.RWMutex{}
+	server := ipc.NewIpcServer("fuck",dbtool,lock)
+	netListener ,err := net.Listen("tcp",":"+strconv.Itoa(port))
 	if(err!=nil){
 		log.Println(err)
 		return

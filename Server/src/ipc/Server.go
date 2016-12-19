@@ -5,6 +5,9 @@ import (
 	"log"
 	"encoding/json"
 	"DB"
+	"time"
+	"sync"
+	"fmt"
 )
 
 type Request struct {
@@ -18,14 +21,48 @@ type Response struct {
 type IpcServer struct {
 	Name string //server name
 	DBtool *DB.DBTool
+	Lock *sync.RWMutex
+	Ynum int
+	Tnum int
 }
-type Account struct {
+type Account struct {//这个是用来登录的
 	User string
 	Pass string
 }
-func NewIpcServer(name string,DB *DB.DBTool)*IpcServer{
+type User struct {//这个是实际用户
+	Cardid string
+	Peopleid string
+	Money int
+}
+func NewIpcServer(name string,DB *DB.DBTool,lock *sync.RWMutex)*IpcServer{
+	var ans = &IpcServer{Name:name,DBtool:DB,Lock:lock}
+	go ans.Refresh()
+	return ans;
+}
 
-	return &IpcServer{Name:name,DBtool:DB}
+func (server *IpcServer)Refresh(){
+	select {
+	case <-time.After(time.Second):
+		if time.Now().Hour()==0&&time.Now().Minute()==0&&time.Now().Minute()==0{
+			server.Lock.Lock()
+			defer server.Lock.Unlock()
+			server.Ynum=0;
+			server.Tnum=0;
+		}
+	}
+}
+func (server *IpcServer)getUserName(kind string)(string){
+	server.Lock.RLock()
+	defer server.Lock.RUnlock()
+
+	if kind == "Y"{
+		server.Ynum++;
+		return fmt.Sprintf("Y%d%03d%07d",time.Now().Year(),time.Now().YearDay(),server.Ynum)
+	}else {
+		server.Tnum++;
+		return fmt.Sprintf("Y%d%03d%07d",time.Now().Year(),time.Now().YearDay(),server.Tnum)
+	}
+
 }
 func (server *IpcServer)ReceiveMessage(conn net.Conn){//这点可能会出bug 待修改
 
@@ -63,7 +100,7 @@ func (server *IpcServer)handle(req Request)(Response,error){
 	switch req.Method {
 	case "LOGIN":
 		var ac Account
-		err =json.Unmarshal([]byte(req.Params),&ac)
+		err =json.Unmarshal([]byte(req.Params),&ac)//要对body进行 解码
 		if err!=nil{
 			log.Println("err in handle with act login ")
 		}
@@ -71,18 +108,19 @@ func (server *IpcServer)handle(req Request)(Response,error){
 		if err!=nil{
 			log.Println("err in handle with act login ")
 		}
-		//return rep,nil
 	case "REG":
 		var peopleid string = req.Params
 		rep,err =server.handleReg(peopleid)
 		if err!=nil{
 			log.Println("err in handle reg")
 		}
-
-
+	case "GETALLFREQUENTUSERLIST"://虽然很奇怪这样 但是还是统一一下
+		rep,err = server.handleGetAllFrequentUserList()
+		if err!=nil{
+			log.Println("err in get frequent user list")
+		}
 	default:
 	}
-
 	return rep,nil
 }
 func (server *IpcServer)handleLogin(usr ,pass string)(Response,error){//待修改
@@ -103,7 +141,8 @@ func (server *IpcServer)handleLogin(usr ,pass string)(Response,error){//待修�
 	return rep,nil
 }
 func (server *IpcServer)handleReg(peopleid string)(Response,error){
-	username,_,err:=server.DBtool.Reg(peopleid)
+	YUserName := server.getUserName("Y")
+	username,_,err:=server.DBtool.Reg(peopleid,YUserName)
 	var rep Response
 	rep.Code = "200"
 	if err!=nil{
@@ -114,6 +153,27 @@ func (server *IpcServer)handleReg(peopleid string)(Response,error){
 		log.Println("reg success with username "+ username)
 	}
 	return rep,err
-
 }
-
+func (server *IpcServer)handleGetAllFrequentUserList()(Response,error){
+	log.Println("getting frequent user list")
+	var rep Response;
+	var userlist []User
+	var tmp User
+	rows,err:= server.DBtool.GetAllFrequentUser()
+	if err!=nil{
+		log.Println(err.Error())
+		return rep,nil
+	}
+	for rows.Next(){
+		rows.Scan(&tmp.Cardid,&tmp.Peopleid,&tmp.Money)
+		userlist = append(userlist,tmp)
+	}
+	b,err:=json.Marshal(userlist)
+	if err!=nil{
+		log.Println(err.Error())
+		return rep,nil
+	}
+	rep.Code = "200"
+	rep.Body = string(b[:]);
+	return rep,nil
+}

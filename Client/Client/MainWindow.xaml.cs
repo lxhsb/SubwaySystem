@@ -42,8 +42,9 @@ namespace Client
             {
                 Ipc.Client.Connect();
             }
-            catch
+            catch (Exception e )
             {
+                MessageBox.Show(e.ToString());
                 MessageBox.Show("连接失败");
                 System.Environment.Exit(0);
             }

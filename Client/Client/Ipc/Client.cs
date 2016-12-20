@@ -54,6 +54,16 @@ namespace Client.Ipc
                 pass = p;
             }
         }
+        public struct AddMoneyOP//用于封装加钱的操作
+        {
+            public string cardid;
+            public int money;
+            public AddMoneyOP(string _id ,int _money)
+            {
+                cardid = _id;
+                money = _money;
+            }
+        }
         
         private static Socket ClientSocket;
         private static string Ip = "127.0.0.1";//server ip 
@@ -80,7 +90,6 @@ namespace Client.Ipc
             {
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 string str = js.Serialize(req);
-                
                 ClientSocket.Send(Encoding.UTF8.GetBytes(str));
                 int len = ClientSocket.Receive(Result);
                 string ans = Encoding.UTF8.GetString(Result, 0, len);
@@ -130,15 +139,26 @@ namespace Client.Ipc
         {
             Request req = new Request();
             req.Method = "GETALLFREQUENTUSERLIST";
-            req.Params = "";
+            req.Params = "";          
+            Response resp = Send(req);
+            return resp.Body;
+        }
+        public static string AddMoney(string id ,int money)
+        {
+            Request req = new Request();
+            req.Method = "ADDMONEY";
             JavaScriptSerializer js = new JavaScriptSerializer();
-          
-            
-            Response re = Send(req);
-            return re.Body;
-            
-
-
+            req.Params = js.Serialize(new AddMoneyOP(id, money));
+            Response resp = Send(req);
+            return resp.Body;
+        }
+        public static string DelUser(string id )
+        {
+            Request req = new Request();
+            req.Method = "DELUSER";
+            req.Params = id;
+            Response resp = Send(req);
+            return resp.Body;
 
         }
     }

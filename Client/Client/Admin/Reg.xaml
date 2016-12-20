@@ -8,7 +8,7 @@
         Title="Reg" Height="425.662" Width="579.236">
     <Grid>
         <Label x:Name="label1" Content="身份证号：" HorizontalAlignment="Left" Margin="101,91,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="176,95,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="176,95,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="259"/>
         <Button x:Name="button" Content="确认" HorizontalAlignment="Left" Margin="176,140,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
 
     </Grid>

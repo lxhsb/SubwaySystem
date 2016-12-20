@@ -24,16 +24,17 @@ namespace Client.Admin
         {
             public string Cardid;
             public string Peopleid;
-            public string Money;
+            public int Money;
             public override string ToString()
             {
-                return "        "+Cardid + "                           " + string.Format("{0:0000}", Money.ToString()) + "                                " + Peopleid;
+                return "      " + Cardid;
             }
         }
         public Index()
         {
             InitializeComponent();
             refresh();
+            listBox.SelectedIndex = 0;
         }
         private void button3_Click(object sender, RoutedEventArgs e)
         {
@@ -53,15 +54,62 @@ namespace Client.Admin
             {
                 listBox.Items.Add(user);
             }
-            listBox.SelectedIndex = 0;
-
-           
-           
         }
-
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             refresh();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)//add money 
+        {
+            object now = listBox.SelectedItem;
+            if (now == null)
+                return;
+            User usernow = (User)now ;
+            string text = textBox.Text;
+            int money;
+            if(!int.TryParse(text,out money) )
+            {
+                MessageBox.Show("fail");
+            }
+            else
+            {
+                string res = Ipc.Client.AddMoney(usernow.Cardid,money);
+                if (res!="-1")
+                {
+                    MessageBox.Show("Add Money Success");
+                }
+                else
+                {
+                    MessageBox.Show("fail");
+                }
+            }
+            refresh();
+        }
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object now = listBox.SelectedItem;
+            if (now == null)
+                return;
+            User user = (User)(now);
+            label2.Content = user.Money;
+            label3.Content = user.Peopleid;
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)//删除 
+        {
+            object obj = listBox.SelectedItem;
+            if (obj == null)
+                return;
+            User user = (User)(obj);
+            if(user.Money>0)
+            {
+                MessageBox.Show("无法删除余额大于0的用户,请尝试刷新");
+            }
+            else
+            {
+                MessageBox.Show(Ipc.Client.DelUser(user.Cardid));
+            }
         }
     }
 }

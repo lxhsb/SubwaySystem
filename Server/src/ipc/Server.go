@@ -10,29 +10,34 @@ import (
 	"fmt"
 )
 
-type Request struct {
+type Request struct { //Request
 	Method string
 	Params string
 }
-type Response struct {
+type Response struct {//Response
 	Code string
 	Body string
 }
-type IpcServer struct {
+type IpcServer struct { // IpcServer
 	Name string //server name
 	DBtool *DB.DBTool
 	Lock *sync.RWMutex
 	Ynum int
 	Tnum int
 }
-type Account struct {//这个是用来登录的
+type Account struct {// use for admin login
 	User string
 	Pass string
 }
-type User struct {//这个是实际用户
+type User struct {//real user
 	Cardid string
 	Peopleid string
 	Money int
+}
+type AddMoneyOP struct {
+	Cardid string
+	Money int
+
 }
 func NewIpcServer(name string,DB *DB.DBTool,lock *sync.RWMutex)*IpcServer{
 	var ans = &IpcServer{Name:name,DBtool:DB,Lock:lock}
@@ -85,7 +90,6 @@ func (server *IpcServer)ReceiveMessage(conn net.Conn){//这点可能会出bug �
 	}
 }
 func (server *IpcServer)send(rep Response,conn net.Conn)(error){
-
 	b,err:= json.Marshal(rep)
 	if err!=nil{
 		return err
@@ -103,6 +107,7 @@ func (server *IpcServer)handle(req Request)(Response,error){
 		err =json.Unmarshal([]byte(req.Params),&ac)//要对body进行 解码
 		if err!=nil{
 			log.Println("err in handle with act login ")
+
 		}
 		rep ,err =server.handleLogin(ac.User,ac.Pass)
 		if err!=nil{
@@ -118,6 +123,22 @@ func (server *IpcServer)handle(req Request)(Response,error){
 		rep,err = server.handleGetAllFrequentUserList()
 		if err!=nil{
 			log.Println("err in get frequent user list")
+		}
+	case "ADDMONEY":
+		var addmoneyop AddMoneyOP
+		err = json.Unmarshal([]byte(req.Params),&addmoneyop)
+		if err!=nil{
+			log.Println("err unmarshal json in addmoney")
+		}
+		rep ,err = server.handleAddMoney(addmoneyop.Cardid,addmoneyop.Money)
+		if err!=nil{
+			log.Println("err in handle add money")
+		}
+	case "DELUSER":
+		id :=req.Params
+		rep,err = server.handleDelUser(id)
+		if err!=nil{
+			log.Println("err in handle deluser")
 		}
 	default:
 	}
@@ -176,4 +197,23 @@ func (server *IpcServer)handleGetAllFrequentUserList()(Response,error){
 	rep.Code = "200"
 	rep.Body = string(b[:]);
 	return rep,nil
+}
+func (server *IpcServer)handleAddMoney(cardid string , money int)(Response ,error) {
+	var rep Response;
+	rep.Code = "200";
+	rep.Body = "-1";
+	_, err := server.DBtool.AddMoney(cardid, money)
+	if err != nil {
+		return rep, err
+	}
+	rep.Body = "1"
+	return rep,err
+
+}
+func (server *IpcServer)handleDelUser(id string)(Response ,error){
+	var rep Response
+	var err error
+	rep.Code = "200";
+	rep.Body,err = server.DBtool.Del(id)
+	return rep,err
 }

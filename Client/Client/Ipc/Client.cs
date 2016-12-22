@@ -64,7 +64,16 @@ namespace Client.Ipc
                 money = _money;
             }
         }
-        
+        public struct AskTempTicketOP//封装购买临时票的操作
+        {
+            public int num;
+            public int money;
+            public AskTempTicketOP(int _num ,int _money)
+            {
+                num = _num;
+                money = _money;
+            }
+        }
         private static Socket ClientSocket;
         private static string Ip = "127.0.0.1";//server ip 
         private static int Port = 1208;//server port 
@@ -159,6 +168,21 @@ namespace Client.Ipc
             req.Params = id;
             Response resp = Send(req);
             return resp.Body;
+
+        }
+        public static string[] AskTempUser(int num ,int money)
+        {
+            AskTempTicketOP tmp = new AskTempTicketOP(num, money);
+            Request req = new Request();
+            req.Method = "ASKTEMPUSER";
+            //   req.Params = new JavaScriptSerializer().Serialize(tmp);
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            req.Params = js.Serialize(tmp);
+            Response rep = Send(req);
+            string[] ans = js.Deserialize<string[]>(rep.Body);
+            return ans;
+
+            
 
         }
     }

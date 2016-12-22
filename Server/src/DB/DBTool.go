@@ -8,10 +8,11 @@ import (
 
 type DBTool struct {
         getPass *sql.Stmt
-        reg *sql.Stmt
+        reg *sql.Stmt//for frequent user
         getAllFrequentUser *sql.Stmt
         addMoney *sql.Stmt
         delUser *sql.Stmt
+        regTMP *sql.Stmt// reg for temp user
         db *sql.DB
         lock *sync.RWMutex
 }
@@ -30,8 +31,10 @@ func NewDBTool(user,pass,ip,port,name string)(*DBTool, error){
         ans.getAllFrequentUser,err = db.Prepare("select * from user ;")
         ans.addMoney,err = db.Prepare("update user  set money = money + (?) where cardid like (?);")
         ans.delUser ,err = db.Prepare("delete from user where cardid like (?);")
+        ans.regTMP,err = db.Prepare("insert into temp_user value((?),(?));")
         ans.db = db
         ans.db.Ping()
+        ans.init()//仅供测试使用  注意删除！！！！
         return  ans ,err
 }
 func (db *DBTool)Close(){
@@ -77,4 +80,15 @@ func (db *DBTool)Del(id string )(string,error){
                 return  "NO",err
         }
         return  "YES",nil
+}
+func (db *DBTool)RegTmp(cardid string ,money int )(string ,error){
+        _,err := db.regTMP.Exec(cardid,money)
+        if err!=nil{
+                return  "NO",err
+        }
+        return  "YES",nil
+}
+func (db *DBTool)init(){
+        db.db.Exec("delete  from user");
+        db.db.Exec("delete from temp_user");
 }

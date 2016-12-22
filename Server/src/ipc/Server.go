@@ -39,6 +39,11 @@ type AddMoneyOP struct {
 	Money int
 
 }
+type AskTempRegOP struct{
+	Num int
+	Money int
+
+}
 func NewIpcServer(name string,DB *DB.DBTool,lock *sync.RWMutex)*IpcServer{
 	var ans = &IpcServer{Name:name,DBtool:DB,Lock:lock}
 	go ans.Refresh()
@@ -57,15 +62,15 @@ func (server *IpcServer)Refresh(){
 	}
 }
 func (server *IpcServer)getUserName(kind string)(string){
-	server.Lock.RLock()
-	defer server.Lock.RUnlock()
+	server.Lock.Lock()
+	defer server.Lock.Unlock()
 
 	if kind == "Y"{
 		server.Ynum++;
 		return fmt.Sprintf("Y%d%03d%07d",time.Now().Year(),time.Now().YearDay(),server.Ynum)
 	}else {
 		server.Tnum++;
-		return fmt.Sprintf("Y%d%03d%07d",time.Now().Year(),time.Now().YearDay(),server.Tnum)
+		return fmt.Sprintf("T%d%03d%07d",time.Now().Year(),time.Now().YearDay(),server.Tnum)
 	}
 
 }
@@ -83,7 +88,7 @@ func (server *IpcServer)ReceiveMessage(conn net.Conn){//这点可能会出bug �
 
 		if err!=nil{//这点先这样写
 			log.Println("err unmarshal json from " + conn.RemoteAddr().String())
-			break
+			continue
 		}
 		rep,err:= server.handle(req)
 		server.send(rep,conn)
@@ -107,39 +112,63 @@ func (server *IpcServer)handle(req Request)(Response,error){
 		err =json.Unmarshal([]byte(req.Params),&ac)//要对body进行 解码
 		if err!=nil{
 			log.Println("err in handle with act login ")
+			break
 
 		}
 		rep ,err =server.handleLogin(ac.User,ac.Pass)
 		if err!=nil{
 			log.Println("err in handle with act login ")
+			break
 		}
 	case "REG":
 		var peopleid string = req.Params
 		rep,err =server.handleReg(peopleid)
 		if err!=nil{
 			log.Println("err in handle reg")
+			break
 		}
 	case "GETALLFREQUENTUSERLIST"://虽然很奇怪这样 但是还是统一一下
 		rep,err = server.handleGetAllFrequentUserList()
 		if err!=nil{
 			log.Println("err in get frequent user list")
+			break
 		}
 	case "ADDMONEY":
 		var addmoneyop AddMoneyOP
 		err = json.Unmarshal([]byte(req.Params),&addmoneyop)
 		if err!=nil{
 			log.Println("err unmarshal json in addmoney")
+			break
 		}
 		rep ,err = server.handleAddMoney(addmoneyop.Cardid,addmoneyop.Money)
 		if err!=nil{
 			log.Println("err in handle add money")
+			break
 		}
 	case "DELUSER":
 		id :=req.Params
 		rep,err = server.handleDelUser(id)
 		if err!=nil{
 			log.Println("err in handle deluser")
+			break
 		}
+	case "ASKTEMPUSER"://to do here
+		str:=req.Params
+		var tmp  AskTempRegOP
+		err =json.Unmarshal([]byte(str),&tmp)
+		if err!=nil{
+			log.Println("err in ask temp user unmarshal json")
+			break
+		}
+		rep,err= server.handleAskTempUser(tmp.Num,tmp.Money)
+		if err!=nil{
+			log.Println("err in ask temp user ")
+			log.Println(err)
+			break
+		}
+
+
+
 	default:
 	}
 	return rep,nil
@@ -161,7 +190,7 @@ func (server *IpcServer)handleLogin(usr ,pass string)(Response,error){//待修�
 	}
 	return rep,nil
 }
-func (server *IpcServer)handleReg(peopleid string)(Response,error){
+func (server *IpcServer)handleReg(peopleid string)(Response,error){//reg frequent user
 	YUserName := server.getUserName("Y")
 	username,_,err:=server.DBtool.Reg(peopleid,YUserName)
 	var rep Response
@@ -175,6 +204,7 @@ func (server *IpcServer)handleReg(peopleid string)(Response,error){
 	}
 	return rep,err
 }
+
 func (server *IpcServer)handleGetAllFrequentUserList()(Response,error){
 	log.Println("getting frequent user list")
 	var rep Response;
@@ -208,7 +238,6 @@ func (server *IpcServer)handleAddMoney(cardid string , money int)(Response ,erro
 	}
 	rep.Body = "1"
 	return rep,err
-
 }
 func (server *IpcServer)handleDelUser(id string)(Response ,error){
 	var rep Response
@@ -217,3 +246,26 @@ func (server *IpcServer)handleDelUser(id string)(Response ,error){
 	rep.Body,err = server.DBtool.Del(id)
 	return rep,err
 }
+func (server *IpcServer)handleAskTempUser(num,money int)(Response,error){
+	var ans []string
+	var resp Response
+	for i:=0;i<num;i++{
+		username := server.getUserName("T")
+		_,err:= server.DBtool.RegTmp(username,money)
+		if err!=nil{
+			return resp,err
+		}
+		ans = append(ans,username)
+	}
+
+
+	resp.Code ="200"
+	b,err :=json.Marshal(ans)
+	if err!=nil{
+		return resp,err
+	}
+	resp.Body = string(b[:])
+	return resp,nil
+
+}
+

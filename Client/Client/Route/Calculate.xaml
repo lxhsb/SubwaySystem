@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Client.Route"
       mc:Ignorable="d" 
-      d:DesignHeight="447" d:DesignWidth="779"
+      d:DesignHeight="379" d:DesignWidth="714"
       Title="结算">
 
-    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,-6,-26">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,219,52">
         <Label x:Name="label" Content="购票信息" HorizontalAlignment="Left" Margin="84,50,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="票种： 单程票" HorizontalAlignment="Left" Margin="109,91,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1_Copy" Content="起始车站：" HorizontalAlignment="Left" Margin="109,131,0,0" VerticalAlignment="Top"/>

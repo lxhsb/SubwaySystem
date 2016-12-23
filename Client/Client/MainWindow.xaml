@@ -5,12 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="627.913" Width="901.864">
+        Title="MainWindow" Height="1040" Width="1802" >
     <Grid>
-        <Button x:Name="button" Content="总线" HorizontalAlignment="Left" Margin="105,50,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="1号线" HorizontalAlignment="Left" Margin="185,50,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button2" Content="2号线" HorizontalAlignment="Left" Margin="265,50,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="446"  Width="779" Margin="105,105,0,0" VerticalAlignment="Top" NavigationUIVisibility="Hidden"  Source="/Route/AllRoute.xaml" RenderTransformOrigin="0.5,0.5">
+        <Grid.Background>
+            <ImageBrush ImageSource="Image/背景.jpg"/>
+        </Grid.Background>
+        <Button x:Name="button" Content="总线" HorizontalAlignment="Left" Margin="490,191,0,0" VerticalAlignment="Top" Width="114" Click="button_Click" Height="53" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Image/总线按钮.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button1" Content="1号线" HorizontalAlignment="Left" Margin="650,191,0,0" VerticalAlignment="Top" Width="114" Click="button_Click" Height="53" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Image/1号线按钮.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button2" Content="2号线" HorizontalAlignment="Left" Margin="816,191,0,0" VerticalAlignment="Top" Width="114" Click="button_Click" Height="53" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Image/2号线按钮.jpg"/>
+            </Button.Background>
+        </Button>
+        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="624"  Width="1399" Margin="341,295,0,0" VerticalAlignment="Top" NavigationUIVisibility="Hidden"  Source="/Route/AllRoute.xaml" RenderTransformOrigin="0.5,0.5">
             <Frame.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -20,26 +35,25 @@
                 </TransformGroup>
             </Frame.RenderTransform>
         </Frame>
-        <Button x:Name="button3" Content="管理员" HorizontalAlignment="Left" Margin="809,568,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
-        <RadioButton x:Name="radioButton" Content="1张" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy" Content="2张" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"  Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy1" Content="3张" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy2" Content="4张" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy3" Content="5张" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy4" Content="6张" HorizontalAlignment="Left" Margin="10,286,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy5" Content="7张" HorizontalAlignment="Left" Margin="10,322,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy6" Content="8张" HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked"/>
-        <RadioButton x:Name="radioButton_Copy7" Content="9张" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked"/>
-        <Button x:Name="button4" Content="2元" HorizontalAlignment="Left" Margin="449,50,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
-        <Button x:Name="button4_Copy" Content="3元" HorizontalAlignment="Left" Margin="529,50,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
-        <Button x:Name="button4_Copy1" Content="4元" HorizontalAlignment="Left" Margin="609,50,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
-        <Button x:Name="button4_Copy2" Content="5元" HorizontalAlignment="Left" Margin="689,50,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
-        <Button x:Name="button4_Copy3" Content="6元" HorizontalAlignment="Left" Margin="769,50,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
-        <Label x:Name="label" Content="总线" HorizontalAlignment="Left" Height="27" Margin="105,74,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="button5" Content="模拟进出站" HorizontalAlignment="Left" Margin="10,568,0,0" VerticalAlignment="Top" Width="75" Click="button5_Click"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="4,494,0,0" VerticalAlignment="Top" Width="75" SelectionChanged="comboBox_SelectionChanged"/>
-        <Label x:Name="label1" Content="默认站点" HorizontalAlignment="Left" Height="26" Margin="2,463,0,0" VerticalAlignment="Top" Width="59" RenderTransformOrigin="0.439,0.423"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="24,532,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.275,0.16"/>
+        <Button x:Name="button3" Content="管理员" HorizontalAlignment="Left" Margin="1659,948,0,0" VerticalAlignment="Top" Width="125" Click="button3_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFEE97EA" FontSize="26.667" RenderTransformOrigin="0.28,0"/>
+        <RadioButton x:Name="radioButton" Content="1张" HorizontalAlignment="Left" Margin="62,175,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}" Background="White"/>
+        <RadioButton x:Name="radioButton_Copy" Content="2张" HorizontalAlignment="Left" Margin="62,249,0,0" VerticalAlignment="Top"  Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <RadioButton x:Name="radioButton_Copy1" Content="3张" HorizontalAlignment="Left" Margin="62,325,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <RadioButton x:Name="radioButton_Copy2" Content="4张" HorizontalAlignment="Left" Margin="62,405,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <RadioButton x:Name="radioButton_Copy3" Content="5张" HorizontalAlignment="Left" Margin="62,486,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <RadioButton x:Name="radioButton_Copy4" Content="6张" HorizontalAlignment="Left" Margin="62,560,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <RadioButton x:Name="radioButton_Copy5" Content="7张" HorizontalAlignment="Left" Margin="62,640,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <RadioButton x:Name="radioButton_Copy6" Content="8张" HorizontalAlignment="Left" Margin="62,720,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <RadioButton x:Name="radioButton_Copy7" Content="9张" HorizontalAlignment="Left" Margin="62,800,0,0" VerticalAlignment="Top" Checked="radioButton_Copy7_Checked" FontSize="48" Foreground="#FFF0ABFB" BorderBrush="{x:Null}"/>
+        <Button x:Name="button4" Content="2元" HorizontalAlignment="Left" Margin="1340,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFDAB5EC"/>
+        <Button x:Name="button4_Copy" Content="3元" HorizontalAlignment="Left" Margin="1420,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFDAB5EC"/>
+        <Button x:Name="button4_Copy1" Content="4元" HorizontalAlignment="Left" Margin="1500,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFDAB5EC"/>
+        <Button x:Name="button4_Copy2" Content="5元" HorizontalAlignment="Left" Margin="1580,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFDAB5EC"/>
+        <Button x:Name="button4_Copy3" Content="6元" HorizontalAlignment="Left" Margin="1660,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFDAB5EC"/>
+        <Label x:Name="label" Content="总线" HorizontalAlignment="Left" Height="75" Margin="565,42,0,0" VerticalAlignment="Top" Width="320" Foreground="#FFD482E6" FontSize="48" />
+        <Button x:Name="button5" Content="模拟进出站" HorizontalAlignment="Left" Margin="30,955,0,0" VerticalAlignment="Top" Width="140" Click="button5_Click" Foreground="#FFD898E2" FontSize="21.333" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="147,904,0,64" Width="143" SelectionChanged="comboBox_SelectionChanged" FontSize="21.333" Foreground="#FFD9A6E8" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <Label x:Name="label1" Content="本站" HorizontalAlignment="Left" Height="41" Margin="45,904,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.439,0.423" Foreground="#FFDD8FEA" FontSize="21.333"/>
 
     </Grid>
 </Window>

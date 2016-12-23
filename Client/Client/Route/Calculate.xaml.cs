@@ -67,7 +67,7 @@ namespace Client.Route
             label1_Copy2.Content = Ticket.TicketNum.ToString();
             label6_Copy.Content = allPrice.ToString();
             checkThread = new Thread(new ThreadStart(this.check));
-            checkThread.Start();
+          //  checkThread.Start();
 
         }
         public Calculate(int onePrice)
@@ -79,7 +79,7 @@ namespace Client.Route
             label1_Copy2.Content = Ticket.TicketNum.ToString();
             label6_Copy.Content = allPrice.ToString();
             checkThread = new Thread(new ThreadStart(this.check));
-            checkThread.Start();
+          //  checkThread.Start();
         }
         private void pay()//支付 
         {

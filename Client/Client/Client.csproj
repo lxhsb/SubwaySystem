@@ -173,7 +173,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\2号线按钮.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\1号线按钮.jpg" />
+    <Resource Include="Image\总线按钮.jpg" />
+    <Resource Include="Image\背景.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\一号线按钮.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\总图1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\1号线图.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

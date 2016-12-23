@@ -5,45 +5,191 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Client.Route"
       mc:Ignorable="d" 
-      d:DesignHeight="447" d:DesignWidth="779"
+      d:DesignHeight="624" d:DesignWidth="1339"
       Title="Page1">
+    <Page.Background>
+        <ImageBrush/>
+    </Page.Background>
 
-    <Grid Height="477"  Width="779">
-        <Button x:Name="button" Content="西流湖" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button_Copy" Content="西三环" HorizontalAlignment="Left" Margin="35,202,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button_Copy1" Content="秦岭路" HorizontalAlignment="Left" Margin="53,224,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button_Copy2" Content="桐柏路" HorizontalAlignment="Left" Margin="76,248,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button_Copy3" Content="碧沙岗" HorizontalAlignment="Left" Margin="89,272,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button_Copy4" Content="绿城广场" HorizontalAlignment="Left" Margin="112,296,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button1" Content="医学院" HorizontalAlignment="Left" Margin="144,320,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button2" Content="郑州火车站" HorizontalAlignment="Left" Margin="198,298,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button3" Content="二七广场" HorizontalAlignment="Left" Margin="228,274,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button4" Content="人民路" HorizontalAlignment="Left" Margin="271,242,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button5" Content="紫荆山" HorizontalAlignment="Left" Margin="351,223,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button6" Content="燕庄" HorizontalAlignment="Left" Margin="439,228,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button7" Content="民航路" HorizontalAlignment="Left" Margin="470,204,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button8" Content="会展中心" HorizontalAlignment="Left" Margin="505,179,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button9" Content="黄河南路" HorizontalAlignment="Left" Margin="542,157,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button10" Content="农业南路" HorizontalAlignment="Left" Margin="588,181,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button11" Content="东风南路" HorizontalAlignment="Left" Margin="617,204,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button12" Content="郑州东站" HorizontalAlignment="Left" Margin="641,228,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button13" Content="博学路" HorizontalAlignment="Left" Margin="664,253,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button14" Content="市体育中心" HorizontalAlignment="Left" Margin="690,279,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15" Content="黄河路" HorizontalAlignment="Left" Margin="351,199,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy" Content="关虎屯" HorizontalAlignment="Left" Margin="351,175,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy1" Content="东风路" HorizontalAlignment="Left" Margin="351,151,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy2" Content="北三环" HorizontalAlignment="Left" Margin="351,127,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy3" Content="沙门" HorizontalAlignment="Left" Margin="351,103,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy4" Content="柳林" HorizontalAlignment="Left" Margin="351,79,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy5" Content="刘庄" HorizontalAlignment="Left" Margin="351,55,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy7" Content="南三环" HorizontalAlignment="Left" Margin="351,369,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy8" Content="花寨" HorizontalAlignment="Left" Margin="351,345,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy9" Content="南五里堡" HorizontalAlignment="Left" Margin="351,321,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy10" Content="二里岗" HorizontalAlignment="Left" Margin="351,297,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy11" Content="陇海东路" HorizontalAlignment="Left" Margin="351,273,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy12" Content="东大街" HorizontalAlignment="Left" Margin="351,249,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy13" Content="战马屯" HorizontalAlignment="Left" Margin="351,393,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
-        <Button x:Name="button15_Copy14" Content="南四环" HorizontalAlignment="Left" Margin="351,417,0,0" VerticalAlignment="Top" Width="75" Click="button15_Copy5_Click"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Client;component/Image/总图1.jpg"/>
+        </Grid.Background>
+        <Button x:Name="button" Content="西流湖" HorizontalAlignment="Left" Margin="331,288,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy" Content="西三环" HorizontalAlignment="Left" Margin="371,289,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy1" Content="秦岭路" HorizontalAlignment="Left" Margin="413,288,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy2" Content="桐柏路" HorizontalAlignment="Left" Margin="454,288,0,0" VerticalAlignment="Top" Width="16" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy3" Content="碧沙岗" HorizontalAlignment="Left" Margin="487,288,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" Height="15" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy4" Content="绿城广场" HorizontalAlignment="Left" Margin="525,326,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button1" Content="医学院" HorizontalAlignment="Left" Margin="569,326,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button2" Content="郑州火车站" HorizontalAlignment="Left" Margin="612,326,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Height="16" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button3" Content="二七广场" HorizontalAlignment="Left" Margin="634,300,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button4" Content="人民路" HorizontalAlignment="Left" Margin="660,272,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button5" Content="紫荆山" HorizontalAlignment="Left" Margin="686,240,0,0" VerticalAlignment="Top" Width="18" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Height="18" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button6" Content="燕庄" HorizontalAlignment="Left" Margin="727,240,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button7" Content="民航路" HorizontalAlignment="Left" Margin="765,240,0,0" VerticalAlignment="Top" Width="16" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button8" Content="会展中心" HorizontalAlignment="Left" Margin="829,240,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button9" Content="黄河南路" HorizontalAlignment="Left" Margin="862,240,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button10" Content="农业南路" HorizontalAlignment="Left" Margin="913,240,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button11" Content="东风南路" HorizontalAlignment="Left" Margin="966,240,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button12" Content="郑州东站" HorizontalAlignment="Left" Margin="1004,240,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button13" Content="博学路" HorizontalAlignment="Left" Margin="1039,241,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button14" Content="市体育中心" HorizontalAlignment="Left" Margin="1072,208,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15" Content="黄河路" HorizontalAlignment="Left" Margin="686,202,0,0" VerticalAlignment="Top" Width="17" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy" Content="关虎屯" HorizontalAlignment="Left" Margin="686,162,0,0" VerticalAlignment="Top" Width="17" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy1" Content="东风路" HorizontalAlignment="Left" Margin="687,132,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy2" Content="北三环" HorizontalAlignment="Left" Margin="687,108,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy3" Content="沙门" HorizontalAlignment="Left" Margin="687,64,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy4" Content="柳林" HorizontalAlignment="Left" Margin="687,42,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy5" Content="刘庄" HorizontalAlignment="Left" Margin="687,8,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy7" Content="南三环" HorizontalAlignment="Left" Margin="687,528,0,0" VerticalAlignment="Top" Width="14" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy8" Content="花寨" HorizontalAlignment="Left" Margin="686,479,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy9" Content="南五里堡" HorizontalAlignment="Left" Margin="686,443,0,0" VerticalAlignment="Top" Width="17" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy10" Content="二里岗" HorizontalAlignment="Left" Margin="687,404,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy11" Content="陇海东路" HorizontalAlignment="Left" Margin="687,356,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="15">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy12" Content="东大街" HorizontalAlignment="Left" Margin="686,301,0,0" VerticalAlignment="Top" Width="17" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14" RenderTransformOrigin="-0.706,0.643">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy13" Content="战马屯" HorizontalAlignment="Left" Margin="687,568,0,0" VerticalAlignment="Top" Width="14" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button15_Copy14" Content="南四环" HorizontalAlignment="Left" Margin="686,591,0,0" VerticalAlignment="Top" Width="15" Click="button15_Copy5_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="14">
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/一号线按钮.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>

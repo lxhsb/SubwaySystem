@@ -113,7 +113,6 @@ func (server *IpcServer)handle(req Request)(Response,error){
 		if err!=nil{
 			log.Println("err in handle with act login ")
 			break
-
 		}
 		rep ,err =server.handleLogin(ac.User,ac.Pass)
 		if err!=nil{
@@ -152,7 +151,7 @@ func (server *IpcServer)handle(req Request)(Response,error){
 			log.Println("err in handle deluser")
 			break
 		}
-	case "ASKTEMPUSER"://to do here
+	case "ASKTEMPUSER":
 		str:=req.Params
 		var tmp  AskTempRegOP
 		err =json.Unmarshal([]byte(str),&tmp)
@@ -166,10 +165,9 @@ func (server *IpcServer)handle(req Request)(Response,error){
 			log.Println(err)
 			break
 		}
-
-
-
 	default:
+		rep.Code = "404"
+		rep.Body = "err"
 	}
 	return rep,nil
 }
@@ -257,8 +255,6 @@ func (server *IpcServer)handleAskTempUser(num,money int)(Response,error){
 		}
 		ans = append(ans,username)
 	}
-
-
 	resp.Code ="200"
 	b,err :=json.Marshal(ans)
 	if err!=nil{
@@ -266,6 +262,5 @@ func (server *IpcServer)handleAskTempUser(num,money int)(Response,error){
 	}
 	resp.Body = string(b[:])
 	return resp,nil
-
 }
 

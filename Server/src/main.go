@@ -7,17 +7,11 @@ import (
 	"ipc"
 	"DB"
 	"os"
-	//"time"
 	"sync"
 )
-
-
-
 var port int = 1208
-var ip string = "127.0.0.1"
-
 func main(){
-	log.Println("fuck")
+	//log.Println("fuck")
 
 	dbtool ,err := DB.NewDBTool("root","root","127.0.0.1","3306","subwaysys")
 	defer dbtool.Close()

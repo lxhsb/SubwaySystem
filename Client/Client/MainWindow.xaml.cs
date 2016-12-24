@@ -91,19 +91,16 @@ namespace Client
                 return;
             }
             Page p = obj as Page;
-            
             if(p!=null)
             {
                 frame.NavigationService.RemoveBackEntry();          
                 frame.Source = source;
                 return;
             }
-              
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-          //  this.Hide();
             Login login = new Login();
             login.ShowDialog();
         }
@@ -130,7 +127,6 @@ namespace Client
             else
                 return 1;
         }
-
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             Button now = sender as Button;
@@ -151,6 +147,7 @@ namespace Client
         {
             string now = (string)comboBox.SelectedItem;
             Data.ResetDefaultStation(now);
+            label3.Content = now;
         }
 
         private void radioButton_Copy7_Checked(object sender, RoutedEventArgs e)

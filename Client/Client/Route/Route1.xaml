@@ -12,34 +12,166 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Client;component/Image/1号线图.jpg"/>
         </Grid.Background>
-        <Button x:Name="button" Content="西流湖" HorizontalAlignment="Left" Margin="640,98,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="44">
+        <Button x:Name="button" Content="西流湖" HorizontalAlignment="Left" Margin="640,97,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
             <Button.Background>
-                <ImageBrush ImageSource="/Client;component/Image/1.png"/>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="button_Copy" Content="西三环" HorizontalAlignment="Left" Margin="704,98,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="43">
+        <Button x:Name="button_Copy" Content="西三环" HorizontalAlignment="Left" Margin="703,97,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
             <Button.Background>
-                <ImageBrush ImageSource="/Client;component/Image/1.png"/>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="button_Copy1" Content="秦岭路" HorizontalAlignment="Left" Margin="755,26,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button_Copy2" Content="桐柏路" HorizontalAlignment="Left" Margin="805,72,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button_Copy3" Content="碧沙岗" HorizontalAlignment="Left" Margin="880,26,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button_Copy4" Content="绿城广场" HorizontalAlignment="Left" Margin="935,72,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="医学院" HorizontalAlignment="Left" Margin="1010,31,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button2" Content="郑州火车站" HorizontalAlignment="Left" Margin="165,485,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button3" Content="二七广场" HorizontalAlignment="Left" Margin="240,520,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button4" Content="人民路" HorizontalAlignment="Left" Margin="306,485,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button5" Content="紫荆山" HorizontalAlignment="Left" Margin="375,525,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button6" Content="燕庄" HorizontalAlignment="Left" Margin="445,485,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button7" Content="民航路" HorizontalAlignment="Left" Margin="494,530,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button8" Content="会展中心" HorizontalAlignment="Left" Margin="560,485,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button9" Content="黄河南路" HorizontalAlignment="Left" Margin="625,535,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button10" Content="农业南路" HorizontalAlignment="Left" Margin="695,485,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button11" Content="东风南路" HorizontalAlignment="Left" Margin="755,530,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button12" Content="郑州东站" HorizontalAlignment="Left" Margin="820,490,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button13" Content="博学路" HorizontalAlignment="Left" Margin="895,540,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button14" Content="市体育中心" HorizontalAlignment="Left" Margin="945,495,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button_Copy1" Content="秦岭路" HorizontalAlignment="Left" Margin="768,97,0,0" VerticalAlignment="Top" Width="44" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy2" Content="桐柏路" HorizontalAlignment="Left" Margin="832,97,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy3" Content="碧沙岗" HorizontalAlignment="Left" Margin="895,97,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy4" Content="绿城广场" HorizontalAlignment="Left" Margin="960,97,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button1" Content="医学院" HorizontalAlignment="Left" Margin="1023,97,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button2" Content="郑州火车站" HorizontalAlignment="Left" Margin="198,322,0,0" VerticalAlignment="Top" Width="44" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button3" Content="二七广场" HorizontalAlignment="Left" Margin="262,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button4" Content="人民路" HorizontalAlignment="Left" Margin="325,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button5" Content="紫荆山" HorizontalAlignment="Left" Margin="390,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button6" Content="燕庄" HorizontalAlignment="Left" Margin="453,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button7" Content="民航路" HorizontalAlignment="Left" Margin="517,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button8" Content="会展中心" HorizontalAlignment="Left" Margin="581,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button9" Content="黄河南路" HorizontalAlignment="Left" Margin="645,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button10" Content="农业南路" HorizontalAlignment="Left" Margin="709,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button11" Content="东风南路" HorizontalAlignment="Left" Margin="773,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button12" Content="郑州东站" HorizontalAlignment="Left" Margin="837,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button13" Content="博学路" HorizontalAlignment="Left" Margin="901,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button14" Content="市体育中心" HorizontalAlignment="Left" Margin="965,321,0,0" VerticalAlignment="Top" Width="45" Click="button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="45">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.OpacityMask>
+            <Button.Background>
+                <ImageBrush ImageSource="/Client;component/Image/111.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>

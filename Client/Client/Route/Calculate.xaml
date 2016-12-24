@@ -4,11 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Client.Route"
-      mc:Ignorable="d" 
-      d:DesignHeight="379" d:DesignWidth="714"
-      Title="结算">
+      mc:Ignorable="d"
+      Title="结算" Height="565" Width="530">
 
-    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,219,52">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,164,10">
         <Label x:Name="label" Content="购票信息" HorizontalAlignment="Left" Margin="84,50,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="票种： 单程票" HorizontalAlignment="Left" Margin="109,91,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1_Copy" Content="起始车站：" HorizontalAlignment="Left" Margin="109,131,0,0" VerticalAlignment="Top"/>
@@ -27,7 +26,7 @@
         <Label x:Name="label1_Copy5" Content="0" HorizontalAlignment="Left" Margin="184,309,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1_Copy6" Content="元" HorizontalAlignment="Left" Margin="238,279,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1_Copy7" Content="元" HorizontalAlignment="Left" Margin="238,309,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label7" Content="请投入纸币或硬币" HorizontalAlignment="Left" Margin="238,350,0,0" VerticalAlignment="Top" Width="242"/>
-        <Button x:Name="button1" Content="假装支付" HorizontalAlignment="Left" Height="22" Margin="86,351,0,0" VerticalAlignment="Top" Width="115" Click="button1_Click" />
+        <Label x:Name="label7" Content="请投入纸币或硬币" HorizontalAlignment="Left" Margin="238,339,0,0" VerticalAlignment="Top" Width="242"/>
+        <Button x:Name="button1" Content="假装支付" HorizontalAlignment="Left" Height="22" Margin="86,347,0,0" VerticalAlignment="Top" Width="115" Click="button1_Click" />
     </Grid>
 </Page>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Pay" Height="562.18" Width="587.972">
     <Grid>
-        <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="367" Margin="10,10,0,0" VerticalAlignment="Top" Width="560"/>
+        <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="511" Margin="10,10,0,0" VerticalAlignment="Top" Width="560"/>
 
     </Grid>
 </Window>

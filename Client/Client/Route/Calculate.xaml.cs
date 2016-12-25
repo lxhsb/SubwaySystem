@@ -22,31 +22,38 @@ namespace Client.Route
     public partial class Calculate : Page
     {
         private bool isPaid;//whether it is paid
+        private Thread now;//主窗体线程
         private void check()//to do
         {
+
             while(isPaid ==false)
             {
+                if (now.IsAlive==false)//检查主窗体是不是活着 不是的话就挂掉
+                {
+                  
+                }
             }
             if (isPaid)
             {
                 MessageBox.Show("paid success");
+                string[] ans = Ipc.Client.AskTempUser(num, onePrice);
+                if (ans == null)
+                {
+                    MessageBox.Show("error");
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("购票成功");
+                    for (int i = 0; i < ans.Length; i++)
+                    {
+                        sb.AppendLine(ans[i]);
+                    }
+                    MessageBox.Show(sb.ToString());
+                }
             }
             
-            string[] ans = Ipc.Client.AskTempUser(num, onePrice);
-            if (ans == null)
-            {
-                MessageBox.Show("error");
-            }
-            else
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("购票成功");
-                for (int i=0;i<ans.Length; i++)
-                {
-                    sb.AppendLine(ans[i]);
-                }
-                MessageBox.Show(sb.ToString());
-            }
+           
 
         }
         private int dis;
@@ -57,7 +64,7 @@ namespace Client.Route
         public Calculate()
         {
             InitializeComponent();
-
+            now = Thread.CurrentThread;
             label2.Content = Ticket.From;
             label3.Content = Ticket.To;
             dis = Data.getDistance(Ticket.From, Ticket.To);
@@ -67,19 +74,18 @@ namespace Client.Route
             label1_Copy2.Content = Ticket.TicketNum.ToString();
             label6_Copy.Content = allPrice.ToString();
             checkThread = new Thread(new ThreadStart(this.check));
-          
-
+            checkThread.Start();
         }
         public Calculate(int onePrice)
         {
             InitializeComponent();
-           
+            now = Thread.CurrentThread;
             label6.Content = onePrice.ToString();
             allPrice = Ticket.TicketNum * onePrice;
             label1_Copy2.Content = Ticket.TicketNum.ToString();
             label6_Copy.Content = allPrice.ToString();
             checkThread = new Thread(new ThreadStart(this.check));
-          //  checkThread.Start();
+            checkThread.Start();
         }
         private void pay()//支付 
         {
@@ -96,6 +102,7 @@ namespace Client.Route
         }
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            label1_Copy5.Content = label6_Copy.Content;
             pay();
         }
     }

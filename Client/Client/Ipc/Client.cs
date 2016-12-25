@@ -75,7 +75,7 @@ namespace Client.Ipc
             }
         }
         private static Socket ClientSocket;
-        private static string Ip = "115.159.190.196";//server ip 
+        private static string Ip = "127.0.0.1";//server ip 
         private static int Port = 1208;//server port 
         private static IPAddress ServerIp = IPAddress.Parse(Ip);
         private static byte[] Result = new byte[1 << 20];//缓冲区开 1M  不够再开
@@ -175,7 +175,6 @@ namespace Client.Ipc
             AskTempTicketOP tmp = new AskTempTicketOP(num, money);
             Request req = new Request();
             req.Method = "ASKTEMPUSER";
-            //   req.Params = new JavaScriptSerializer().Serialize(tmp);
             JavaScriptSerializer js = new JavaScriptSerializer();
             req.Params = js.Serialize(tmp);
             Response rep = Send(req);

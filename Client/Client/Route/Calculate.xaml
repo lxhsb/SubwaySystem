@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Client.Route"
       mc:Ignorable="d"
-      Title="结算" Height="565" Width="530">
+      Title="结算" Height="565" Width="530"
+      >
 
     <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,164,10">
         <Label x:Name="label" Content="购票信息" HorizontalAlignment="Left" Margin="84,50,0,0" VerticalAlignment="Top"/>

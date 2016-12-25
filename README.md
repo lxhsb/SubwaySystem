@@ -2,7 +2,7 @@
 
 ## Recreated 2016.12.20：##
 >*	项目几乎是独立完成，C/S结构，client端使用的是c#，server端用的是**golang**
->*	开发环境 vs2015 ，idea with go pugin
+>*	开发环境 vs2015 ，idea with go plugin
 >*	运行环境 winserver2008 ，mysql
 >*   **未在linux环境下进行测试**  
 

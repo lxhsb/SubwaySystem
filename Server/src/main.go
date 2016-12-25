@@ -1,28 +1,20 @@
 package main
 
 import (
+	"DBOP"
+	"log"
+	"os"
+	"Servers"
 	"net"
 	"strconv"
-	"log"
-	"ipc"
-	"DB"
-	"os"
-	"sync"
 )
-var port int = 1208
-func main(){
-	//log.Println("fuck")
-
-	dbtool ,err := DB.NewDBTool("root","root","127.0.0.1","3306","subwaysys")
+var dbtool *DBOP.DBTool
+var err error
+var ipcserver *Servers.IpcServer
+var port int = 1208//监听端口
+func main() {
+	Init()
 	defer dbtool.Close()
-	//***要多学习设计模式***
-	if err!=nil{
-		log.Println(err)
-		os.Exit(1)
-	}
-
-	lock := &sync.RWMutex{}
-	server := ipc.NewIpcServer("fuck",dbtool,lock)
 	netListener ,err := net.Listen("tcp",":"+strconv.Itoa(port))
 	if(err!=nil){
 		log.Println(err)
@@ -37,7 +29,19 @@ func main(){
 			continue
 		}
 		log.Println(conn.RemoteAddr().String()+" connect success")
-		go server.ReceiveMessage(conn)
+		go ipcserver.ReceiveMessage(conn)
 	}
-
+}
+func Init(){
+	/*
+	初始化数据库连接
+	 */
+	dbtool,err = DBOP.NewDBTool("root","root","127.0.0.1","3306","subwaysys")
+	//defer  dbtool.Close()
+	if err!=nil{
+		log.Println(err)
+		os.Exit(1)
+	}
+	var centerserver Servers.Server = Servers.NewCenterServer(dbtool)
+	ipcserver = Servers.NewIpcserver(&centerserver)
 }

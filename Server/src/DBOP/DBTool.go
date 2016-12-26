@@ -25,7 +25,7 @@ func NewDBTool(user,pass,ip,port,name string)(*DBTool, error){
 	}
 	db.SetMaxIdleConns(10)
 	db.SetMaxOpenConns(20)
-	ans.getPass,err = db.Prepare("select password from admin_user where username = (?);")//lost of checkerr
+	ans.getPass,err = db.Prepare("select password from admin_user where username = (?);")
 	if err!=nil{
 		return ans,err
 	}
@@ -51,6 +51,7 @@ func NewDBTool(user,pass,ip,port,name string)(*DBTool, error){
 	}
 	ans.db = db
 	ans.db.Ping()
+	
 	ans.init()//仅供测试使用  注意删除！！！！
 	return  ans ,err
 }

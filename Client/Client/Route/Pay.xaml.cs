@@ -20,15 +20,23 @@ namespace Client.Route
     /// </summary>
     public partial class Pay : Window
     {
+        private Calculate cal;
         public Pay()
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new Calculate());
+            cal = new Calculate();
+            frame.NavigationService.Navigate(cal);
         }
         public Pay(int price )
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new Calculate(price));
+            cal = new Calculate(price);
+            frame.NavigationService.Navigate(cal);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            cal.checkThread.Abort();//关闭监视线程  实在想不到更好的解决办法了 （wszz）
         }
     }
 }

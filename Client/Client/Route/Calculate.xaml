@@ -5,29 +5,250 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Client.Route"
       mc:Ignorable="d"
-      Title="结算" Height="565" Width="530"
+      Title="结算" Height="700" Width="650"
       >
+    <Page.Background>
+        <ImageBrush ImageSource="/Client;component/Image/未标题-1.jpg"/>
+    </Page.Background>
 
-    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,164,10">
-        <Label x:Name="label" Content="购票信息" HorizontalAlignment="Left" Margin="84,50,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="票种： 单程票" HorizontalAlignment="Left" Margin="109,91,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy" Content="起始车站：" HorizontalAlignment="Left" Margin="109,131,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy1" Content="目的车站：" HorizontalAlignment="Left" Margin="109,161,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="" HorizontalAlignment="Left" Margin="184,131,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="184,161,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="单价：" HorizontalAlignment="Left" Margin="109,191,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="购票数量：" HorizontalAlignment="Left" Margin="109,221,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label6" Content="money" HorizontalAlignment="Left" Margin="184,191,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy2" Content="num" HorizontalAlignment="Left" Margin="184,221,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy3" Content="元" HorizontalAlignment="Left" Margin="238,191,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy4" Content="张" HorizontalAlignment="Left" Margin="238,221,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4_Copy" Content="应付金额：" HorizontalAlignment="Left" Margin="109,279,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5_Copy" Content="已付金额：" HorizontalAlignment="Left" Margin="109,309,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label6_Copy" Content="money" HorizontalAlignment="Left" Margin="184,279,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy5" Content="0" HorizontalAlignment="Left" Margin="184,309,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy6" Content="元" HorizontalAlignment="Left" Margin="238,279,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1_Copy7" Content="元" HorizontalAlignment="Left" Margin="238,309,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label7" Content="请投入纸币或硬币" HorizontalAlignment="Left" Margin="238,339,0,0" VerticalAlignment="Top" Width="242"/>
-        <Button x:Name="button1" Content="假装支付" HorizontalAlignment="Left" Height="22" Margin="86,347,0,0" VerticalAlignment="Top" Width="115" Click="button1_Click" />
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!--背景色-->
+                        <Border x:Name="back" Opacity="0.8" CornerRadius="3">
+                            <Border.BitmapEffect>
+                                <OuterGlowBitmapEffect Opacity="1" GlowSize="0" GlowColor="{Binding RelativeSource={RelativeSource TemplatedParent},Path=(Button.Background).(SolidColorBrush.Color)}"/>
+                            </Border.BitmapEffect>
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1.5">
+                                    <GradientBrush.GradientStops>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}" Offset="0"/>
+                                            <GradientStop Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}" Offset="0.4"/>
+                                            <GradientStop Color="#FFF" Offset="1"/>
+                                        </GradientStopCollection>
+                                    </GradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <!--前景色及边框-->
+                            <Border x:Name="fore" BorderThickness="1" CornerRadius="3" BorderBrush="#5555">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#6FFF" Offset="0.5"/>
+                                                <GradientStop Color="#1111" Offset="0.51"/>
+                                            </GradientStopCollection>
+                                        </GradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <!--按钮内容-->
+                                <ContentPresenter x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding  Content}">
+                                    <ContentPresenter.BitmapEffect>
+                                        <DropShadowBitmapEffect Color="#000" Direction="-90" ShadowDepth="2" Softness="0.1" Opacity="0.3" />
+                                    </ContentPresenter.BitmapEffect>
+                                </ContentPresenter>
+                            </Border>
+                        </Border>
+                        <!--触发器-->
+                        <ControlTemplate.Triggers>
+                            <!--鼠标移入移出-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="200" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)" />
+                                            <ColorAnimation To="#AFFF" BeginTime="0:0:0.2" Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                            <ColorAnimation To="#3FFF" BeginTime="0:0:0.2" Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)" />
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[1].(GradientStop.Color)" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="25,0,0,0">
+        <Label x:Name="label" Content="购票信息" HorizontalAlignment="Left" Margin="45,40,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1" Content="票种： 单程票" HorizontalAlignment="Left" Margin="102,89,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy" Content="起始车站：" HorizontalAlignment="Left" Margin="102,131,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy1" Content="目的车站：" HorizontalAlignment="Left" Margin="102,164,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label2" Content="" HorizontalAlignment="Left" Margin="224,131,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5486DC" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="224,164,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5486DC" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label4" Content="单价：" HorizontalAlignment="Left" Margin="103,230,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label5" Content="购票数量：" HorizontalAlignment="Left" Margin="102,267,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label6" Content="money" HorizontalAlignment="Left" Margin="224,267,0,0" VerticalAlignment="Top" FontSize="21.333" RenderTransformOrigin="0.512,0.216">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy2" Content="num" HorizontalAlignment="Left" Margin="177,230,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy3" Content="元" HorizontalAlignment="Left" Margin="320,267,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy4" Content="张" HorizontalAlignment="Left" Margin="255,230,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label4_Copy" Content="应付金额：" HorizontalAlignment="Left" Margin="102,325,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label5_Copy" Content="已付金额：" HorizontalAlignment="Left" Margin="102,355,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label6_Copy" Content="money" HorizontalAlignment="Left" Margin="224,325,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy5" Content="0" HorizontalAlignment="Left" Margin="224,355,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy6" Content="元" HorizontalAlignment="Left" Margin="320,328,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1_Copy7" Content="元" HorizontalAlignment="Left" Margin="320,355,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label7" Content="请投入纸币或硬币" HorizontalAlignment="Left" Margin="210,433,0,0" VerticalAlignment="Top" Width="242" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF5461E2" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button x:Name="button1" Content="假装支付" HorizontalAlignment="Left" Height="40" Margin="102,430,0,0" VerticalAlignment="Top" Width="92" Click="button1_Click" Background="{x:Null}" FontSize="21.333" >
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF6DA0EA" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7D95D4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
     </Grid>
 </Page>

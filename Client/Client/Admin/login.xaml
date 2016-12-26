@@ -5,13 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.Admin"
         mc:Ignorable="d"
-        Title="login" Height="300" Width="300">
+        Title="login" Height="300" Width="339">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="119,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="119,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="用户名：" HorizontalAlignment="Left" Margin="60,70,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="密码：" HorizontalAlignment="Left" Margin="60,122,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="登录" HorizontalAlignment="Left" Margin="96,188,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Client;component/Image/未标题-1.jpg"/>
+        </Grid.Background>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="34" Margin="145,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18.667" >
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7671E6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="34" Margin="145,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="18.667">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7671E6" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
+        <Label x:Name="label" Content="用户名：" HorizontalAlignment="Left" Margin="60,70,0,0" VerticalAlignment="Top" FontSize="18.667">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7671E6" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label1" Content="密码：" HorizontalAlignment="Left" Margin="60,122,0,0" VerticalAlignment="Top" FontSize="18.667">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7671E6" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button x:Name="button" Content="登录" HorizontalAlignment="Left" Margin="115,192,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Background="{x:Null}" FontSize="18.667">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7671E6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFA67AF3" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

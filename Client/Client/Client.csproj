@@ -180,12 +180,6 @@
     <Resource Include="Image\总图1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\1号线图.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\2号线图.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +195,25 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\未标题-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\增款.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\开户.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\刷新.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\销户.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\1号线图1.jpg" />
+    <Resource Include="Image\2号线图1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

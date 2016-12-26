@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.Route"
         mc:Ignorable="d"
-        Title="Pay" Height="562.18" Width="587.972">
-    <Grid>
-        <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="511" Margin="10,10,0,0" VerticalAlignment="Top" Width="560"/>
+        Title="Pay" Height="587" Width="624" Closing="Window_Closing">
 
+    <Grid>
+        <Frame x:Name="frame" Content="Frame" Margin="0,0,0,-2"/>
     </Grid>
 </Window>

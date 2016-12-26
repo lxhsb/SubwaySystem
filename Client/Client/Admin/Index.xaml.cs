@@ -27,7 +27,7 @@ namespace Client.Admin
             public int Money;
             public override string ToString()
             {
-                return "      " + Cardid;
+                return Cardid;
             }
         }
         public Index()

@@ -5,134 +5,139 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
         mc:Ignorable="d"
-        Title="LXHSB Subway" Height="1040" Width="1802" WindowStartupLocation="CenterScreen" >
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Image/1.jpg"/>
-        </Grid.Background>
-        <Button x:Name="button" Content="总线" HorizontalAlignment="Left" Margin="500,183,0,0" VerticalAlignment="Top" Width="145" Click="button_Click" Height="75" Foreground="{x:Null}" BorderBrush="{x:Null}" OpacityMask="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="Image/总线按钮.png"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="button1" Content="1号线" HorizontalAlignment="Left" Margin="670,183,0,0" VerticalAlignment="Top" Width="145" Click="button_Click" Height="75" Foreground="{x:Null}" BorderBrush="{x:Null}" OpacityMask="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="Image/1号线按钮.png"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="button2" Content="2号线" HorizontalAlignment="Left" Margin="845,183,0,0" VerticalAlignment="Top" Width="145" Click="button_Click" Height="75" Foreground="{x:Null}" BorderBrush="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="Image/2号线按钮.png"/>
-            </Button.Background>
-        </Button>
-        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="605"  Width="1360" Margin="360,295,0,0" VerticalAlignment="Top" NavigationUIVisibility="Hidden"  Source="/Route/AllRoute.xaml" RenderTransformOrigin="0.5,0.5">
-            <Frame.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.113"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Frame.RenderTransform>
-        </Frame>
-        <Button x:Name="button3" Content="管理员" HorizontalAlignment="Left" Margin="1659,948,0,0" VerticalAlignment="Top" Width="125" Click="button3_Click" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="26.667" RenderTransformOrigin="0.28,0">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF725B9B" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
-        <RadioButton x:Name="radioButton" Content="1张" HorizontalAlignment="Left" Margin="75,195,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy" Content="2张" HorizontalAlignment="Left" Margin="75,269,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy1" Content="3张" HorizontalAlignment="Left" Margin="75,345,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy2" Content="4张" HorizontalAlignment="Left" Margin="75,425,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy3" Content="5张" HorizontalAlignment="Left" Margin="75,506,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy4" Content="6张" HorizontalAlignment="Left" Margin="75,580,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy5" Content="7张" HorizontalAlignment="Left" Margin="75,660,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy6" Content="8张" HorizontalAlignment="Left" Margin="75,740,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <RadioButton x:Name="radioButton_Copy7" Content="9张" HorizontalAlignment="Left" Margin="75,820,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
-        <Button x:Name="button4" Content="2元" HorizontalAlignment="Left" Margin="1300,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6067A8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
-        <Button x:Name="button4_Copy" Content="3元" HorizontalAlignment="Left" Margin="1380,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6067A8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
-        <Button x:Name="button4_Copy1" Content="4元" HorizontalAlignment="Left" Margin="1460,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6067A8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
-        <Button x:Name="button4_Copy2" Content="5元" HorizontalAlignment="Left" Margin="1540,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6067A8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
-        <Button x:Name="button4_Copy3" Content="6元" HorizontalAlignment="Left" Margin="1620,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6067A8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
-        <Label x:Name="label" Content="总线" HorizontalAlignment="Left" Height="82" Margin="386,51,0,0" VerticalAlignment="Top" Width="244" FontSize="48" FontFamily="Palatino Linotype" FontWeight="Bold" >
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF6067A8" Offset="1"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Button x:Name="button5" Content="模拟进出站" HorizontalAlignment="Left" Margin="386,931,0,0" VerticalAlignment="Top" Width="140" Click="button5_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontFamily="Yu Gothic UI Semibold">
-            <Button.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF725B9B" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Foreground>
-        </Button>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="132,929,0,23" Width="178" SelectionChanged="comboBox_SelectionChanged" FontSize="26.667" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold">
-            <ComboBox.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF725B9B" Offset="1"/>
-                </LinearGradientBrush>
-            </ComboBox.Foreground>
+        Title="LXHSB Subway" Height="1040" Width="1802" WindowStartupLocation="CenterScreen"
+        >
+    <Window.Background>
+        <ImageBrush ImageSource="Image/1.jpg"/>
+    </Window.Background>
 
-        </ComboBox>
-        <Label x:Name="label1" Content="本站" HorizontalAlignment="Left" Height="41" Margin="45,929,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.439,0.423" FontSize="26.667" FontWeight="Bold" FontFamily="Yu Gothic UI Semibold">
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF725B9B" Offset="1"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
-        <Label x:Name="label3" Content="紫荆山" HorizontalAlignment="Left" Height="139" Margin="684,10,0,0" VerticalAlignment="Top" Width="550" FontSize="96" FontFamily="Yu Gothic UI" FontWeight="Bold">
-            <Label.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF5563A2" Offset="1"/>
-                </LinearGradientBrush>
-            </Label.Foreground>
-        </Label>
+    <Viewbox>
+        <Grid>
 
-    </Grid>
+            <Button x:Name="button" Content="总线" HorizontalAlignment="Left" Margin="500,183,0,0" VerticalAlignment="Top" Width="145" Click="button_Click" Height="75" Foreground="{x:Null}" BorderBrush="{x:Null}" OpacityMask="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="Image/总线按钮.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button1" Content="1号线" HorizontalAlignment="Left" Margin="670,183,0,0" VerticalAlignment="Top" Width="145" Click="button_Click" Height="75" Foreground="{x:Null}" BorderBrush="{x:Null}" OpacityMask="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="Image/1号线按钮.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button2" Content="2号线" HorizontalAlignment="Left" Margin="845,183,0,0" VerticalAlignment="Top" Width="145" Click="button_Click" Height="75" Foreground="{x:Null}" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="Image/2号线按钮.png"/>
+                </Button.Background>
+            </Button>
+            <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="605"  Width="1360" Margin="325,291,0,0" VerticalAlignment="Top" NavigationUIVisibility="Hidden"  Source="/Route/AllRoute.xaml" RenderTransformOrigin="0.5,0.5">
+                <Frame.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.113"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Frame.RenderTransform>
+            </Frame>
+            <Button x:Name="button3" Content="管理员" HorizontalAlignment="Left" Margin="1595,931,0,0" VerticalAlignment="Top" Width="125" Click="button3_Click" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="26.667" RenderTransformOrigin="0.28,0">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF725B9B" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <RadioButton x:Name="radioButton" Content="1张" HorizontalAlignment="Left" Margin="75,195,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy" Content="2张" HorizontalAlignment="Left" Margin="75,269,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy1" Content="3张" HorizontalAlignment="Left" Margin="75,345,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy2" Content="4张" HorizontalAlignment="Left" Margin="75,425,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy3" Content="5张" HorizontalAlignment="Left" Margin="75,506,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy4" Content="6张" HorizontalAlignment="Left" Margin="75,580,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy5" Content="7张" HorizontalAlignment="Left" Margin="75,660,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy6" Content="8张" HorizontalAlignment="Left" Margin="75,740,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <RadioButton x:Name="radioButton_Copy7" Content="9张" HorizontalAlignment="Left" Margin="75,820,0,0" VerticalAlignment="Top" FontSize="48" Foreground="#FF6057AA" BorderBrush="{x:Null}" Checked="radioButton_Copy7_Checked" FontFamily="Segoe UI Black"/>
+            <Button x:Name="button4" Content="2元" HorizontalAlignment="Left" Margin="1235,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF6067A8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button4_Copy" Content="3元" HorizontalAlignment="Left" Margin="1315,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF6067A8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button4_Copy1" Content="4元" HorizontalAlignment="Left" Margin="1395,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF6067A8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button4_Copy2" Content="5元" HorizontalAlignment="Left" Margin="1475,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF6067A8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button4_Copy3" Content="6元" HorizontalAlignment="Left" Margin="1555,77,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF6067A8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Label x:Name="label" Content="总线" HorizontalAlignment="Left" Height="82" Margin="386,51,0,0" VerticalAlignment="Top" Width="244" FontSize="48" FontFamily="Palatino Linotype" FontWeight="Bold" >
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF6067A8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Button x:Name="button5" Content="模拟进出站" HorizontalAlignment="Left" Margin="342,929,0,0" VerticalAlignment="Top" Width="140" Click="button5_Click" FontSize="26.667" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" FontFamily="Yu Gothic UI Semibold">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF725B9B" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="132,929,0,23" Width="173" SelectionChanged="comboBox_SelectionChanged" FontSize="26.667" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold">
+                <ComboBox.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF725B9B" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Foreground>
+
+            </ComboBox>
+            <Label x:Name="label1" Content="假装本站" HorizontalAlignment="Left" Height="41" Margin="10,929,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.439,0.423" FontSize="26.667" FontWeight="Bold" FontFamily="Yu Gothic UI Semibold">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF725B9B" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="label3" Content="紫荆山" HorizontalAlignment="Left" Height="139" Margin="684,10,0,0" VerticalAlignment="Top" Width="550" FontSize="96" FontFamily="Yu Gothic UI" FontWeight="Bold">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF5563A2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+
+        </Grid>
+    </Viewbox>
 </Window>

@@ -10,7 +10,7 @@
 
     <Grid Height="624"  Width="1399">
         <Grid.Background>
-            <ImageBrush ImageSource="/Client;component/Image/2号线图.jpg"/>
+            <ImageBrush ImageSource="/Client;component/Image/2号线图1.jpg"/>
         </Grid.Background>
         <Button x:Name="button5" Content="紫荆山" HorizontalAlignment="Left" Margin="675,116,0,0" VerticalAlignment="Top" Width="45" Click="button15_Copy5_Click" Height="44" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.OpacityMask>

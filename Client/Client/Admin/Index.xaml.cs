@@ -34,7 +34,7 @@ namespace Client.Admin
         {
             InitializeComponent();
             refresh();
-            listBox.SelectedIndex = 0;
+         //   listBox.SelectedIndex = 0;
         }
         private void button3_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +54,7 @@ namespace Client.Admin
             {
                 listBox.Items.Add(user);
             }
+            listBox.SelectedIndex = 0;
         }
         private void button2_Click(object sender, RoutedEventArgs e)
         {

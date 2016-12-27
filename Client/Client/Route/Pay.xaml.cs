@@ -27,7 +27,7 @@ namespace Client.Route
             cal = new Calculate();
             frame.NavigationService.Navigate(cal);
         }
-        public Pay(int price )
+        public Pay(int price)
         {
             InitializeComponent();
             cal = new Calculate(price);

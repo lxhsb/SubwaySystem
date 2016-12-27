@@ -7,9 +7,39 @@
         mc:Ignorable="d"
         Title="Reg" Height="425.662" Width="579.236">
     <Grid>
-        <Label x:Name="label1" Content="身份证号：" HorizontalAlignment="Left" Margin="101,91,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="176,95,0,0" TextWrapping="Wrap" Text="123" VerticalAlignment="Top" Width="259"/>
-        <Button x:Name="button" Content="确认" HorizontalAlignment="Left" Margin="176,140,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Client;component/Image/未标题-1.jpg"/>
+        </Grid.Background>
+        <Label x:Name="label1" Content="身份证号：" HorizontalAlignment="Left" Margin="108,121,0,0" VerticalAlignment="Top" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFB884E4" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="37" Margin="230,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="259" FontSize="21.333">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFBD64F0" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
+        <Button x:Name="button" Content="确认" HorizontalAlignment="Left" Margin="240,209,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Background="{x:Null}" FontSize="21.333">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7B80F1" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFB884E4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
 
     </Grid>
 </Window>

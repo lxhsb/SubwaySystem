@@ -17,5 +17,8 @@ type AddMoneyOP struct { //加钱操作
 type AskTempRegOP struct{ //临时注册操作
 	Num int
 	Money int
-
+}
+type GetOutOP struct {//封装出站的操作
+	Cardid string
+	Price int
 }

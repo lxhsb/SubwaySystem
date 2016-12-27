@@ -65,13 +65,11 @@ namespace Client.Route
             label6_Copy.Content = allPrice.ToString();
             checkThread = new Thread(new ThreadStart(this.check));
             checkThread.Start();
-            
-
         }
-        public Calculate(int onePrice)
+        public Calculate(int _onePrice)
         {
             InitializeComponent();
-          //  now = Thread.CurrentThread;
+            onePrice = _onePrice;
             label6.Content = onePrice.ToString();
             allPrice = Ticket.TicketNum * onePrice;
             label1_Copy2.Content = Ticket.TicketNum.ToString();
@@ -81,16 +79,13 @@ namespace Client.Route
         }
         private void pay()//支付 
         {
-
             if (isPaid)
             {
                 MessageBox.Show("已经支付成功，如果想继续支付请重新购票");
-
             }else
             {
                 isPaid = true;
             }
-            
         }
         private void button1_Click(object sender, RoutedEventArgs e)
         {

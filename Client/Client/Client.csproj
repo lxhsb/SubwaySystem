@@ -70,6 +70,7 @@
     <Compile Include="Route\Pay.xaml.cs">
       <DependentUpon>Pay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Route\Status.cs" />
     <Compile Include="Route\Success.xaml.cs">
       <DependentUpon>Success.xaml</DependentUpon>
     </Compile>

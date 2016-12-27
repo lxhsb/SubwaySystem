@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"encoding/json"
 	"log"
+	"strconv"
 )
 //CenterServer 主要负责处理实际的业务
 type CenterServer struct {
@@ -61,6 +62,7 @@ func (server *CenterServer)Handle(Method,Params string)(*Response,error){//实�
 			log.Println("err in handle with act login ")
 			break
 		}
+		log.Println(ac.User +"try to get in and "+rep.Body)
 	case "REG":
 		var peopleid string = Params
 		rep,err =server.handleReg(peopleid)
@@ -68,12 +70,14 @@ func (server *CenterServer)Handle(Method,Params string)(*Response,error){//实�
 			log.Println("err in handle reg")
 			break
 		}
+		log.Println(rep.Body + " reg success")
 	case "GETALLFREQUENTUSERLIST"://虽然很奇怪这样 但是还是统一一下
 		rep,err = server.handleGetAllFrequentUserList()
 		if err!=nil{
 			log.Println("err in get frequent user list")
 			break
 		}
+		log.Println("get all frequent user list");
 	case "ADDMONEY":
 		var addmoneyop AddMoneyOP
 		err = json.Unmarshal([]byte(Params),&addmoneyop)
@@ -86,6 +90,7 @@ func (server *CenterServer)Handle(Method,Params string)(*Response,error){//实�
 			log.Println("err in handle add money")
 			break
 		}
+		log.Println(addmoneyop.Cardid+"  add money "+ strconv.Itoa(addmoneyop.Money))
 	case "DELUSER":
 		id :=Params
 		rep,err = server.handleDelUser(id)
@@ -93,6 +98,7 @@ func (server *CenterServer)Handle(Method,Params string)(*Response,error){//实�
 			log.Println("err in handle deluser")
 			break
 		}
+		log.Println("delete user success "+id )
 	case "ASKTEMPUSER":
 		str:=Params
 		var tmp  AskTempRegOP
@@ -107,6 +113,23 @@ func (server *CenterServer)Handle(Method,Params string)(*Response,error){//实�
 			log.Println(err)
 			break
 		}
+		log.Println("reg "+ strconv.Itoa(tmp.Num)+"  with money "+ strconv.Itoa(tmp.Money))
+	case "GETOUT":
+		str:=Params
+		var tmp GetOutOP
+		err = json.Unmarshal([]byte(str),&tmp)
+		if err!=nil{
+			log.Println("err in getout unmarshal json")
+			break
+		}
+		//log.Println(tmp.cardid+" ")
+		rep,err = server.handleGetOut(tmp.Cardid,tmp.Price)
+		if err!=nil{
+			log.Println("err in handle getout "+ err.Error())
+			break
+		}
+		log.Println(tmp.Cardid+ "try to get out and result is "+ rep.Body)
+
 	default:
 		rep.Code = "404"
 		rep.Body = "err"
@@ -145,7 +168,7 @@ func (server *CenterServer)handleReg(peopleid string)(*Response,error){//reg fre
 }
 
 func (server *CenterServer)handleGetAllFrequentUserList()(*Response,error){//获取常用会员
-	log.Println("getting frequent user list")
+	//log.Println("getting frequent user list")
 	var rep Response;
 	var userlist []User
 	var tmp User
@@ -203,5 +226,29 @@ func (server *CenterServer)handleAskTempUser(num,money int)(*Response,error){
 	}
 	resp.Body = string(b[:])
 	return &resp,nil
+}
+func (server *CenterServer)handleGetOut(cardid string ,price int )(*Response ,error){
+	var rep Response
+	rep.Code = "200"
+	money ,err:= server.DBTool.GetMoney(cardid)
+	if err!=nil{
+		return &rep,err
+	}
+	if money<price{
+		rep.Body = "money is not success "
+		return &rep,nil
+	}
+	_,err =server.DBTool.AddMoney(cardid,-price)
+	if err!=nil{
+		return &rep,err
+	}
+	if string(cardid[0])=="T"{
+		_,err = server.DBTool.Del(cardid)
+		if err!=nil{
+			return &rep,err
+		}
+	}
+	rep.Body =  "get out ok"
+	return &rep,nil;
 }
 

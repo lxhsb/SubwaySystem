@@ -55,8 +55,6 @@ namespace Client.Config
                 }
             }
             floyd();
-
-
         }
         private static void floyd()
         {
@@ -104,6 +102,10 @@ namespace Client.Config
             else
                 return 6;
 
+        }
+        public static string getDefaultStation()
+        {
+            return DefaultStation;
         }
 
 

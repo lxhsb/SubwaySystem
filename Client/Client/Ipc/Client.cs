@@ -74,8 +74,19 @@ namespace Client.Ipc
                 money = _money;
             }
         }
+        public struct GetOutOP
+        {
+            public string cardid;
+            public int price;
+            public GetOutOP(string _cardid,int _price )
+            {
+                cardid = _cardid;
+                price = _price;
+            }
+
+        }
         private static Socket ClientSocket;
-        private static string Ip = "115.159.190.196";//server ip 
+        private static string Ip = "127.0.0.1";//server ip 
         private static int Port = 1208;//server port 
         private static IPAddress ServerIp = IPAddress.Parse(Ip);
         private static byte[] Result = new byte[1 << 20];//缓冲区开 1M  不够再开
@@ -180,9 +191,16 @@ namespace Client.Ipc
             Response rep = Send(req);
             string[] ans = js.Deserialize<string[]>(rep.Body);
             return ans;
-
-            
-
+        }
+       public static string GetOut(string id ,int price )
+        {
+            GetOutOP tmp = new GetOutOP(id, price);
+            Request req = new Request();
+            req.Method = "GETOUT";
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            req.Params = js.Serialize(tmp);
+            Response rep = Send(req);
+            return rep.Body;
         }
     }
 

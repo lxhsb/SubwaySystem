@@ -5,8 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.TestFunction"
         mc:Ignorable="d"
-        Title="InAndOut" Height="300" Width="300">
-    <Grid>
-        
+        Title="InAndOut" Height="300" Width="454">
+    <Grid HorizontalAlignment="Left" Width="444">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Client;component/Image/未标题-1.jpg"/>
+        </Grid.Background>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="40" Margin="130,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" FontSize="21.333">
+            <TextBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFB573E2" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Foreground>
+        </TextBox>
+        <Label x:Name="label" Content="卡号" HorizontalAlignment="Left" Height="40" Margin="35,55,0,0" VerticalAlignment="Top" Width="60" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFAE6CE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button x:Name="button" Content="进站" HorizontalAlignment="Left" Height="30" Margin="85,195,0,0" VerticalAlignment="Top" Width="120" Click="button_Click_1" FontSize="21.333" Background="{x:Null}">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFBF69F0" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFAE6CE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="button1" Content="出站" HorizontalAlignment="Left" Height="30" Margin="240,195,0,0" VerticalAlignment="Top" Width="135" Click="button1_Click" FontSize="21.333" Background="{x:Null}">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFBF69F0" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFAE6CE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Label x:Name="label1" Content="站点" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="35,113,0,0" FontSize="21.333">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFAE6CE6" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="130,113,0,0" VerticalAlignment="Top" Width="235" Background="{x:Null}" FontSize="21.333" Height="37">
+            <ComboBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFB573E2" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+        </ComboBox>
+
     </Grid>
 </Window>

@@ -7,6 +7,7 @@ import (
 	"Servers"
 	"net"
 	"strconv"
+	"runtime"
 )
 var dbtool *DBOP.DBTool
 var err error
@@ -22,6 +23,7 @@ func main() {
 	}
 	defer netListener.Close()
 	log.Println("waiting for connect")
+	runtime.GOMAXPROCS(500)//测试500 线程
 	for{
 		conn,err:=netListener.Accept()
 		if err!=nil{
@@ -37,7 +39,6 @@ func Init(){
 	初始化数据库连接
 	 */
 	dbtool,err = DBOP.NewDBTool("root","root","127.0.0.1","3306","subwaysys")
-	//defer  dbtool.Close()
 	if err!=nil{
 		log.Println(err)
 		os.Exit(1)

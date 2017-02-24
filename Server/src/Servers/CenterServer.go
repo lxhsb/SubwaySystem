@@ -26,7 +26,7 @@ func NewCenterServer(dbt *DBOP.DBTool) *CenterServer{
 func (server *CenterServer)Refresh(){ //用于每日更新 之后可以在此扩展log到每日文件
 	select {
 	case <-time.After(time.Second):
-		if time.Now().Hour()==0&&time.Now().Minute()==0&&time.Now().Minute()==0{
+		if time.Now().Hour()==0&&time.Now().Minute()==0&&time.Now().Second()==0{
 			server.Lock.Lock()
 			defer server.Lock.Unlock()
 			server.Ynum=0;
